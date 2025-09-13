@@ -4,6 +4,8 @@
 import { z } from 'zod';
 import { analyzeTechStack } from '@/ai/flows/real-time-tech-stack-analysis';
 import { generateProjectProposals } from '@/ai/flows/generate-project-proposals';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 // Contact Form
 const contactSchema = z.object({
@@ -32,9 +34,20 @@ export async function submitContactForm(
     };
   }
 
-  // Simulate sending an email or saving to a database
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  console.log('New contact form submission:', result.data);
+  try {
+    const docRef = await addDoc(collection(db, "contact-submissions"), {
+      ...result.data,
+      submittedAt: serverTimestamp(),
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+    return {
+      message: 'An error occurred while saving your message. Please try again.',
+      issues: ['Firestore Error'],
+    };
+  }
+  
   // Note: File upload handling would require a separate, more complex setup.
 
   return { message: `Thanks, ${result.data.name}! We've received your message.` };
