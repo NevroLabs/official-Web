@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "team-member-1",
+      "description": "Portrait of a female software engineer.",
+      "imageUrl": "https://picsum.photos/seed/101/400/400",
+      "imageHint": "woman developer"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Portrait of a male UI/UX designer.",
+      "imageUrl": "https://picsum.photos/seed/102/400/400",
+      "imageHint": "man designer"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Portrait of a non-binary project manager.",
+      "imageUrl": "https://picsum.photos/seed/103/400/400",
+      "imageHint": "person professional"
+    },
+    {
+      "id": "team-member-4",
+      "description": "Portrait of a male backend developer.",
+      "imageUrl": "https://picsum.photos/seed/104/400/400",
+      "imageHint": "man programmer"
+    },
+    {
+      "id": "team-member-5",
+      "description": "Portrait of a female mobile developer.",
+      "imageUrl": "https://picsum.photos/seed/105/400/400",
+      "imageHint": "woman engineer"
+    },
+    {
+      "id": "team-member-6",
+      "description": "Portrait of a male DevOps specialist.",
+      "imageUrl": "https://picsum.photos/seed/106/400/400",
+      "imageHint": "man tech"
+    },
+    {
+      "id": "client-logo-1",
+      "description": "Logo for a tech startup.",
+      "imageUrl": "https://picsum.photos/seed/201/200/100",
+      "imageHint": "logo abstract"
+    },
+    {
+      "id": "client-logo-2",
+      "description": "Logo for an e-commerce company.",
+      "imageUrl": "https://picsum.photos/seed/202/200/100",
+      "imageHint": "logo minimal"
+    },
+    {
+      "id": "client-logo-3",
+      "description": "Logo for a financial services firm.",
+      "imageUrl": "https://picsum.photos/seed/203/200/100",
+      "imageHint": "logo corporate"
+    },
+    {
+      "id": "client-logo-4",
+      "description": "Logo for a healthcare app.",
+      "imageUrl": "https://picsum.photos/seed/204/200/100",
+      "imageHint": "logo health"
+    }
+  ]
 }
