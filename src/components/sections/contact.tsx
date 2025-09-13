@@ -1,8 +1,8 @@
 
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useEffect, useRef, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { submitContactForm, type ContactFormState } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
@@ -30,7 +30,7 @@ const initialState: ContactFormState = {
 export default function Contact() {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState);
 
   useEffect(() => {
     if (state.message && !state.issues?.length) {
