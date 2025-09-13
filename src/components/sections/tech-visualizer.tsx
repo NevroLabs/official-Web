@@ -15,7 +15,7 @@ function SubmitButton({ children, ...props }: { children: React.ReactNode } & Re
   const { pending } = useFormStatus();
   return (
     <Button {...props} disabled={pending}>
-      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : props.startIcon}
+      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Wand2 className="mr-2 h-4 w-4" />}
       {children}
     </Button>
   );
@@ -65,7 +65,7 @@ export default function TechVisualizer() {
                   <Textarea placeholder="e.g., 'A social media app for pet owners with photo sharing and event scheduling.'" id="projectDescription" name="projectDescription" rows={5} />
                   {analysisState?.issues && <p className="text-sm text-destructive">{analysisState.issues[0]}</p>}
                 </div>
-                <SubmitButton startIcon={<Wand2 className="mr-2 h-4 w-4" />}>
+                <SubmitButton>
                   Analyze Project
                 </SubmitButton>
               </form>
