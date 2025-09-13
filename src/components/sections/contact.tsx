@@ -1,9 +1,9 @@
 
 'use client';
 
-import { useEffect, useActionState, useRef } from 'react';
-import { useFormStatus } from 'react-dom';
-import { submitContactForm, ContactFormState } from '@/app/actions';
+import { useEffect, useRef } from 'react';
+import { useFormState, useFormStatus } from 'react-dom';
+import { submitContactForm, type ContactFormState } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -23,11 +23,14 @@ function SubmitButton() {
   );
 }
 
+const initialState: ContactFormState = {
+    message: '',
+};
+
 export default function Contact() {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-  const initialState: ContactFormState = { message: '', issues: [] };
-  const [state, formAction] = useActionState<ContactFormState, FormData>(submitContactForm, initialState);
+  const [state, formAction] = useFormState(submitContactForm, initialState);
 
   useEffect(() => {
     if (state.message && !state.issues?.length) {
