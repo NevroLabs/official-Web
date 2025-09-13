@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useEffect, useActionState } from 'react';
+import { useEffect, useActionState, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
 import { submitContactForm, ContactFormState } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
@@ -25,7 +25,8 @@ function SubmitButton() {
 
 export default function Contact() {
   const { toast } = useToast();
-  const initialState = { message: '', issues: [] };
+  const formRef = useRef<HTMLFormElement>(null);
+  const initialState: ContactFormState = { message: '', issues: [] };
   const [state, formAction] = useActionState<ContactFormState, FormData>(submitContactForm, initialState);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ export default function Contact() {
         title: 'Success!',
         description: state.message,
       });
+      formRef.current?.reset();
     }
   }, [state, toast]);
 
@@ -78,7 +80,7 @@ export default function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form action={formAction} className="space-y-4">
+              <form ref={formRef} action={formAction} className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name</Label>
