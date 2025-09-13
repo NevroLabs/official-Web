@@ -1,8 +1,8 @@
 
 'use client';
 
-import { useState } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useState, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { getTechStackAnalysis, getProjectProposals, TechAnalysisState, ProjectProposalsState } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -22,7 +22,7 @@ function SubmitButton({ children, ...props }: { children: React.ReactNode } & Re
 }
 
 export default function TechVisualizer() {
-  const [analysisState, formAction] = useFormState<TechAnalysisState, FormData>(getTechStackAnalysis, { analysis: null });
+  const [analysisState, formAction] = useActionState<TechAnalysisState, FormData>(getTechStackAnalysis, { analysis: null });
   const [proposalsState, setProposalsState] = useState<ProjectProposalsState>({});
   const [isGeneratingProposals, setIsGeneratingProposals] = useState(false);
 
