@@ -19,9 +19,9 @@ export default function Footer() {
   ];
 
   const contactInfo = [
-  { icon: Mail, text: 'hello@nevrolabs.com' },
-    { icon: Phone, text: '+1 (555) 123-4567' },
-    { icon: MapPin, text: 'San Francisco, CA' },
+  { icon: Mail, text: 'nevrolabs@gmail.com' },
+    { icon: Phone, text: '+94 (74) 32-88572' },
+    { icon: MapPin, text: 'M/28, 1st Lane, Isurupura, Malabe' },
   ];
 
   return (
