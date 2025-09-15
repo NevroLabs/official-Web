@@ -1,18 +1,28 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
+// Read Firebase configuration from environment variables.
+// Use NEXT_PUBLIC_ prefixes for variables that need to be available to the browser.
+// IMPORTANT: Do not commit your real secrets to source control.
 const firebaseConfig = {
-  "projectId": "studio-8802150107-215ec",
-  "appId": "1:368670764367:web:8728198a7c4b1a7990693a",
-  "storageBucket": "studio-8802150107-215ec.firebasestorage.app",
-  "apiKey": "AIzaSyCty2jCoEmzIm2TEsnuWDnmue1r3hqqgts",
-  "authDomain": "studio-8802150107-215ec.firebaseapp.com",
-  "measurementId": "",
-  "messagingSenderId": "368670764367"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || undefined,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Basic runtime check — will be `undefined` in environments where env vars aren't set.
+if (!firebaseConfig.projectId || !firebaseConfig.apiKey) {
+  // eslint-disable-next-line no-console
+  console.warn(
+    '[firebase] Missing Firebase configuration in environment variables. Please set NEXT_PUBLIC_FIREBASE_* in your environment.'
+  );
+}
+
+// Initialize Firebase app only once (Next.js may import this file multiple times)
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 export const db = getFirestore(app);
