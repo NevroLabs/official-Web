@@ -19,7 +19,7 @@ export default function Footer() {
   ];
 
   const contactInfo = [
-    { icon: Mail, text: 'hello@etherealtech.com' },
+  { icon: Mail, text: 'hello@nevrolabs.com' },
     { icon: Phone, text: '+1 (555) 123-4567' },
     { icon: MapPin, text: 'San Francisco, CA' },
   ];
@@ -60,7 +60,7 @@ export default function Footer() {
                 <Bot className="h-8 w-8 text-primary" />
               </motion.div>
               <span className="font-bold font-display text-xl">
-                EtherealTech
+                NevroLabs
               </span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
@@ -191,7 +191,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              &copy; {new Date().getFullYear()} EtherealTech Innovations. All rights reserved.
+              &copy; {new Date().getFullYear()} NevroLabs. All rights reserved.
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <span>Made with</span>
@@ -207,7 +207,7 @@ export default function Footer() {
               >
                 <Heart className="h-4 w-4 text-red-500 fill-current" />
               </motion.div>
-              <span>by the EtherealTech team</span>
+              <span>by the NevroLabs team</span>
             </div>
           </div>
         </motion.div>

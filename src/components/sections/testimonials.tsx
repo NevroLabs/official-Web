@@ -15,7 +15,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const testimonials = [
   {
     quote:
-      "EtherealTech delivered beyond our wildest expectations. Their team's expertise in web development is second to none. The final product was not only beautiful but also incredibly performant.",
+  "NevroLabs delivered beyond our wildest expectations. Their team's expertise in web development is second to none. The final product was not only beautiful but also incredibly performant.",
     name: 'Jane Doe',
     title: 'CEO, Innovate Inc.',
     logoId: 'client-logo-1',
@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with EtherealTech was a game-changer. They built a custom software solution that streamlined our entire workflow, saving us thousands of hours.",
+  "Working with NevroLabs was a game-changer. They built a custom software solution that streamlined our entire workflow, saving us thousands of hours.",
     name: 'Emily White',
     title: 'COO, DataDriven Corp.',
     logoId: 'client-logo-3',

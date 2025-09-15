@@ -1,5 +1,5 @@
-# Firebase Studio
+# NevroLabs
 
-This is a NextJS starter in Firebase Studio.
+This is the NevroLabs website (Next.js + Tailwind) generated from the Firebase Studio starter.
 
-To get started, take a look at src/app/page.tsx.
+To get started, take a look at `src/app/page.tsx`.

@@ -10,7 +10,7 @@ const timelineData = [
   {
     year: '2018',
     title: 'The Spark',
-    description: 'EtherealTech Innovations was founded by a group of passionate developers with a shared vision for a better digital future.',
+  description: 'NevroLabs was founded by a group of passionate developers with a shared vision for a better digital future.',
     icon: <Zap className="h-5 w-5" />,
   },
   {

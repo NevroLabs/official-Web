@@ -10,15 +10,22 @@ import { Badge } from '../ui/badge';
 import { cn } from '@/lib/utils';
 
 const teamMembers = [
-  { name: 'Dr. Evelyn Reed', role: 'Lead AI Architect', expertise: 'AI', imageId: 'team-member-1' },
-  { name: 'Jax Caden', role: 'Principal Frontend Engineer', expertise: 'Frontend', imageId: 'team-member-2' },
+  { name: 'Savindu Madusanka', role: 'Lead Mobile Application & Full Stack Developer', expertise: 'Frontend, Backend, Mobile', imageId: 'team-member-1' },
+  { name: 'Janitha Gamage', role: 'Project Manager', expertise: 'Frontend, Backend, Project Management', imageId: 'team-member-2' },
   { name: 'Kenji Tanaka', role: 'Head of Mobile', expertise: 'Mobile', imageId: 'team-member-4' },
   { name: 'Aria Vance', role: 'Senior UX/UI Designer', expertise: 'Design', imageId: 'team-member-5' },
   { name: 'Leo Maxwell', role: 'Cloud & DevOps Lead', expertise: 'Backend', imageId: 'team-member-6' },
   { name: 'Samira Khan', role: 'Project Manager', expertise: 'Design', imageId: 'team-member-3' },
-];
+].map(member => ({
+  ...member,
+  // Normalize expertise into an array of trimmed, title-cased tokens for easier filtering and rendering
+  expertiseList: member.expertise
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean),
+}));
 
-const expertiseFilters = ['All', 'AI', 'Frontend', 'Backend', 'Mobile', 'Design'];
+const expertiseFilters = ['All', 'AI', 'Frontend', 'Backend', 'Mobile', 'Design', 'Project Management'];
 
 export default function Team() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -26,7 +33,11 @@ export default function Team() {
   const filteredMembers =
     activeFilter === 'All'
       ? teamMembers
-      : teamMembers.filter((member) => member.expertise === activeFilter);
+      : teamMembers.filter((member) =>
+          member.expertiseList.some(
+            (e) => e.toLowerCase() === activeFilter.toLowerCase()
+          )
+        );
 
   return (
     <section id="team" className="py-20 md:py-32 bg-card">
@@ -78,8 +89,10 @@ export default function Team() {
                 <CardContent className="p-6">
                   <CardTitle className="font-headline text-xl">{member.name}</CardTitle>
                   <p className="mt-1 text-primary">{member.role}</p>
-                   <div className="mt-4">
-                     <Badge variant="outline" className="border-accent text-accent">{member.expertise}</Badge>
+                   <div className="mt-4 flex flex-wrap justify-center gap-2">
+                     {member.expertiseList.map((e) => (
+                       <Badge key={e} variant="outline" className="border-accent text-accent">{e}</Badge>
+                     ))}
                    </div>
                 </CardContent>
               </Card>

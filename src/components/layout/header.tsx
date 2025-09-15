@@ -53,7 +53,7 @@ export default function Header() {
                 <Bot className="h-7 w-7 text-primary" />
               </motion.div>
               <span className="font-bold font-display text-xl">
-                EtherealTech
+                NevroLabs
               </span>
             </Link>
           </motion.div>
@@ -121,7 +121,7 @@ export default function Header() {
                     onClick={() => setSheetOpen(false)}
                   >
                     <Bot className="h-6 w-6 text-primary" />
-                    <span className="font-bold font-display text-lg">EtherealTech</span>
+                    <span className="font-bold font-display text-lg">NevroLabs</span>
                   </Link>
                 </div>
                 
