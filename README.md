@@ -47,7 +47,7 @@ We value small, empowered teams. Our core leadership combines experience buildin
 
 ## Get in touch
 
-Email: `hello@nevrolabs.com`
+Email: `nevrolabs@gmail.com`
 
 We welcome inquiries about new projects, partnerships, or open roles. Please include a short description of your goals, timeline, and budget when contacting us.
 
