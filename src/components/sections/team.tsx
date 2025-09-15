@@ -44,7 +44,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Janitha Gamage',
     role: 'Project Manager',
-    expertise: 'Frontend, Backend, Project Management',
+    expertise: 'Project Management, AI, Backend',
     imageId: 'team-member-2',
     social: {
       github: 'https://github.com/JordanCJ7',
@@ -69,9 +69,31 @@ const teamMembers: TeamMember[] = [
       portfolio: 'https://damidudissanayake.netlify.app/',
     },
   },
-  { name: 'Kenji Tanaka', role: 'Head of Mobile', expertise: 'Mobile', imageId: 'team-member-4' },
-  { name: 'Aria Vance', role: 'Senior UX/UI Designer', expertise: 'Design', imageId: 'team-member-5' },
-  { name: 'Leo Maxwell', role: 'Cloud & DevOps Lead', expertise: 'Backend', imageId: 'team-member-6' },
+  {
+    name: 'Ruchira Tharupathi',
+    role: 'UI/UX Designer & Frontend Developer',
+    expertise: 'Design, Frontend',
+    imageId: 'team-member-4',
+    social: {
+      github: 'https://github.com/RuchiraRTG',
+      linkedin: 'https://www.linkedin.com/in/ruchira-tharupathi-0b9b6334b/',
+      facebook: 'https://www.facebook.com/ruchira.tharupathi.9',
+      instagram: 'https://www.instagram.com/ruchira__0524/',
+      portfolio: 'https://ruchiratharupathi.netlify.app/',
+    },
+  },
+  {
+    name: 'Sanjana Deshan',
+    role: 'Full Stack Developer',
+    expertise: 'Frontend, Backend',
+    imageId: 'team-member-5',
+    social: {
+      github: 'https://github.com/Sanjana200292',
+      linkedin: 'https://www.linkedin.com/in/sanjana-deshan-853909350/',
+      facebook: 'https://www.facebook.com/sanjana.deshan.799880',
+      instagram: 'https://www.instagram.com/sanjana__deshan/',
+    },
+  },
 ].map(member => ({
   ...member,
   // Normalize expertise into an array of trimmed, title-cased tokens for easier filtering and rendering
