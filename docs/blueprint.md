@@ -1,4 +1,4 @@
-# **App Name**: EtherealTech Innovations
+# **App Name**: NevroLabs
 
 ## Core Features:
 
