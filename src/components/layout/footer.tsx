@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Footer() {
   const socialLinks = [
     { icon: Twitter, href: '#', name: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: Github, href: '#', name: 'GitHub', color: 'hover:text-gray-400' },
+    { icon: Github, href: 'https://github.com/NevroLabs', name: 'GitHub', color: 'hover:text-gray-400' },
     { icon: Linkedin, href: '#', name: 'LinkedIn', color: 'hover:text-blue-600' },
   ];
 
@@ -20,7 +20,7 @@ export default function Footer() {
 
   const contactInfo = [
   { icon: Mail, text: 'nevrolabs@gmail.com' },
-    { icon: Phone, text: '+94 (74) 32-88572' },
+    { icon: Phone, text: '+94 (74) 3288-572' },
     { icon: MapPin, text: 'M/28, 1st Lane, Isurupura, Malabe' },
   ];
 
