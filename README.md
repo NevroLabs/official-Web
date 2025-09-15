@@ -47,7 +47,7 @@ We value small, empowered teams. Our core leadership combines experience buildin
 
 ## Get in touch
 
-Email: `nevrolabs@gmail.com`
+Email: `hello@nevrolabs.com`
 
 We welcome inquiries about new projects, partnerships, or open roles. Please include a short description of your goals, timeline, and budget when contacting us.
 
@@ -107,9 +107,11 @@ Developer tools available in `package.json`:
 
 ## Environment & Firebase
 
-This project uses Firebase (Firestore) for backend data in some features. The repository contains a Firebase config file (`src/lib/firebase.ts`) which currently holds a static config object in the code. For security and portability you should replace hard-coded values with environment variables.
+This project uses Firebase (Firestore) for backend data in some features. Firebase configuration has been moved to environment variables and `src/lib/firebase.ts` now reads from `process.env`.
 
-Recommended approach (create `.env.local` in the project root and add the following keys):
+Copy `.env.example` to `.env.local` (or `.env`) and fill in your Firebase values. Example file is included as `.env.example` in the repository root.
+
+Example environment variables (place in `.env.local`):
 
 ```
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
@@ -118,9 +120,10 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 ```
 
-Then update `src/lib/firebase.ts` to read from `process.env.NEXT_PUBLIC_FIREBASE_...` instead of embedding values directly. IMPORTANT: Do not commit real secrets to source control. Remove any real API keys from the repo and rotate them if they have already been shared publicly.
+IMPORTANT: Do not commit real secrets to source control. Keep `.env.local` out of version control and rotate any keys if they were previously committed.
 
 ## Project structure (high level)
 
